@@ -3,11 +3,15 @@ FROM mcr.microsoft.com/powershell:lts-ubuntu-18.04
 # Install tools used by the VSO build automation.
 RUN apt-get update \
     && apt-get install -y \
+        curl \
         git \
         nodejs \
         npm \
+        rpm \
+        ruby-dev \
         tar \
         zip \
+    && gem install fpm \
     && rm -rf /var/lib/apt/lists/* \
     && npm install -g azure-cli@0.9.20 \
     && npm cache clean
