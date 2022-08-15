@@ -20,7 +20,6 @@ RUN apt-get update \
 RUN apt-get update \
     && apt-get install -y \
         git \
-        nodejs \
         npm \
         tar \
         zip \
